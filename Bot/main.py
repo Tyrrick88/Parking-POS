@@ -1,8 +1,12 @@
+from dataclasses import dataclass
+
 class ParkingSystem:
-    def __init__(self, parking_size):
-        self.parking_size = parking_size
-        self.parking_spaces = {i: None for i in range(1, parking_size + 1)}
-        self.parked_cars = {}
+    @dataclass
+    parking_size = int
+    parking_spaces = dict
+    parked_cars = list
+
+    
 def park_car(self, car_plate, parking_space):
         if parking_space not in self.parking_spaces or self.parking_spaces[parking_space] is not None:
             return "Error: Parking space is already occupied or does not exist."
